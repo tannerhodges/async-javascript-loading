@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>👨‍🔬 Basic Test | Async JavaScript Loading</title>
+
+	<script>console.log('1. head inline');</script>
+	<script src="./2-head-external.js"></script>
+	<script>console.log('3. head inline');</script>
+
+	<script async>console.log('4. head inline async');</script>
+	<script async src="./5-head-external-async.js"></script>
+	<script async>console.log('6. head inline async');</script>
+
+	<script defer>console.log('7. head inline defer');</script>
+	<script defer src="./8-head-external-defer.js"></script>
+	<script defer>console.log('9. head inline defer');</script>
+
+	<script>console.log('-- end of head --');</script>
+</head>
+<body>
+	<h1>👨‍🔬 Basic Test</h1>
+	<p>How does loading scripts differently affect the order they run in?</p>
+
+	<script>console.log('10. body inline');</script>
+	<script src="./11-body-external.js"></script>
+	<script>console.log('12. body inline');</script>
+
+	<script async>console.log('13. body inline async');</script>
+	<script async src="./14-body-external-async.js"></script>
+	<script async>console.log('15. body inline async');</script>
+
+	<script defer>console.log('16. body inline defer');</script>
+	<script defer src="./17-body-external-defer.js"></script>
+	<script defer>console.log('18. body inline defer');</script>
+
+	<script>console.log('-- end of body --');</script>
+</body>
+</html>
