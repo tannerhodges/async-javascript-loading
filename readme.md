@@ -7,7 +7,7 @@ How does loading scripts differently affect the order they run in?
 
 ## Basic Test
 
-`index.html`
+`basic/index.html`
 
 ```diff
   1. head inline
