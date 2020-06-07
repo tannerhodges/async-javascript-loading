@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>👨‍🔬 defer all | Dynamic Test | Async JavaScript Loading</title>
+
+	<script>console.log('1. head inline');</script>
+	<script>
+		/**
+		 * Load a JavaScript file.
+		 * @param  {String}  src
+		 * @param  {Boolean} async
+		 * @return {void}
+		 */
+		function loadScript(src, async) {
+			var script = document.createElement('script');
+			script.src = src;
+			script.async = async || false;
+			document.head.append(script);
+		}
+
+		// If _everything_ is loaded dynamically, then we're good!
+		loadScript('./2-head-external.js');
+	</script>
+	<script>console.log('3. head inline');</script>
+
+	<script async>console.log('4. head inline async');</script>
+	<script async>loadScript('./5-head-external-async.js', true);</script>
+	<script async>console.log('6. head inline async');</script>
+
+	<script defer>console.log('7. head inline defer');</script>
+	<script defer>loadScript('./8-head-external-defer.js');</script>
+	<script defer>console.log('9. head inline defer');</script>
+
+	<script>console.log('-- end of head --');</script>
+</head>
+<body>
+	<h1>👨‍🔬 defer all | Dynamic Test</h1>
+	<p>Resources to dig into:</p>
+	<ul>
+		<li><a href="https://javascript.info/script-async-defer#dynamic-scripts" target="_blank" rel="noopener">https://javascript.info/script-async-defer#dynamic-scripts</a></li>
+		<li><a href="https://www.html5rocks.com/en/tutorials/speed/script-loading/" target="_blank" rel="noopener">https://www.html5rocks.com/en/tutorials/speed/script-loading/</a></li>
+		<li><a href="https://stackoverflow.com/a/8996894" target="_blank" rel="noopener">https://stackoverflow.com/a/8996894</a></li>
+		<li><a href="https://html.spec.whatwg.org/multipage/scripting.html#script" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/scripting.html#script</a></li>
+		<li><a href="https://eager.io/blog/everything-I-know-about-the-script-tag/" target="_blank" rel="noopener">https://eager.io/blog/everything-I-know-about-the-script-tag/</a></li>
+	</ul>
+
+	<!--
+
+	Stuff I haven't read yet but is probably useful:
+
+	- https://stackoverflow.com/a/8996894
+	- https://html.spec.whatwg.org/multipage/scripting.html#script
+	- https://eager.io/blog/everything-I-know-about-the-script-tag/
+
+	-->
+
+	<a href="./index.html">&laquo; Back to Dynamic Test</a>
+
+	<script>console.log('10. body inline');</script>
+	<script>loadScript('./11-body-external.js');</script>
+	<script>console.log('12. body inline');</script>
+
+	<script async>console.log('13. body inline async');</script>
+	<script async>loadScript('./14-body-external-async.js', true);</script>
+	<script async>console.log('15. body inline async');</script>
+
+	<script defer>console.log('16. body inline defer');</script>
+	<script defer>loadScript('./17-body-external-defer.js');</script>
+	<script defer>console.log('18. body inline defer');</script>
+
+	<script>console.log('-- end of body --');</script>
+</body>
+</html>

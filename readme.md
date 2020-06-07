@@ -46,6 +46,7 @@ Now it gets interesting...
 
 - If the weights are the same, the order remains consistent.
 - `async`/`defer` only affects external files.
+	- "Classic scripts are affected by the async and defer attributes, but only when the src attribute is set." —[HTML Spec](https://html.spec.whatwg.org/multipage/scripting.html#script)
 - Heavier render-blocking scripts give in-flight scripts more time to load. For example, an `async` script in the `head` can finish loading and execute before other scripts in the `body`.
 - As soon as you start loading over HTTP, `async` varies like crazy. Literally, it can load _whenever_. Results vary, even on a local server with caching disabled and no 3rd party code (except Browsersync).
 - One thing is certain: 17 will always fire after 8. Otherwise, 5 and 14 can show up in any order.
@@ -95,3 +96,4 @@ Based on my limited manual tests tonight, it seems like:
 2. What exactly causes the variation in `async` loading?
 3. Why does `body:async` tend to fire _after_ `body:defer`?
 4. Why not just `defer` everything?
+5. Why do dynamically added scripts always run after scripts in the source code, regardless of position?
