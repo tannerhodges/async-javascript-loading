@@ -51,6 +51,14 @@ Now it gets interesting...
 - As soon as you start loading over HTTP, `async` varies like crazy. Literally, it can load _whenever_. Results vary, even on a local server with caching disabled and no 3rd party code (except Browsersync).
 - One thing is certain: 17 will always fire after 8. Otherwise, 5 and 14 can show up in any order.
 
+### Dynamic
+
+`dynamic/index.html`
+
+- Dynamically loaded scripts will always execute after scripts listed in the markup.
+- The "source" order you add a dynamic script to doesn't matter at all. All that matters is the order you request them in and whether or not they're `async`.
+- If you want to dynamically load a script before other scripts execute (say, conditionally loading a polyfill), you have to dynamically load and defer the other scripts too. (The only other way, as far as I can tell, is to sticky with render-blocking scripts.)
+
 ## Possible Execution Orders
 
 If all scripts were `defer` there would only be 1 possible execution order.
@@ -96,4 +104,4 @@ Based on my limited manual tests tonight, it seems like:
 2. What exactly causes the variation in `async` loading?
 3. Why does `body:async` tend to fire _after_ `body:defer`?
 4. Why not just `defer` everything?
-5. Why do dynamically added scripts always run after scripts in the source code, regardless of position?
+5. Why exactly do dynamically added scripts always run after scripts in the source code, regardless of position?
