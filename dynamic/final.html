@@ -19,14 +19,12 @@
 		}
 
 		// If _everything_ is loaded dynamically, then we're good!
-		[
-			'./2-head-external.js',
-			'./5-head-external-async.js',
-			'./8-head-external-defer.js',
-			'./11-body-external.js',
-			'./14-body-external-async.js',
-			'./17-body-external-defer.js',
-		].forEach(loadScript);
+		loadScript('./2-head-external.js');
+		loadScript('./5-head-external-async.js');
+		loadScript('./8-head-external-defer.js');
+		loadScript('./11-body-external.js');
+		loadScript('./14-body-external-async.js');
+		loadScript('./17-body-external-defer.js');
 	</script>
 
 	<script>console.log('-- end of head --');</script>
