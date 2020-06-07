@@ -40,6 +40,8 @@ How does loading scripts differently affect the order they run in?
 
 ### Weighted
 
+`weighted/index.html`
+
 Now it gets interesting...
 
 - If the weights are the same, the order remains consistent.
