@@ -4,6 +4,15 @@
 	<meta charset="UTF-8">
 	<title>👨‍🔬 final | Dynamic Test | Async JavaScript Loading</title>
 
+	<!-- Preload critical JavaScript files -->
+	<!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content -->
+	<link rel="preload" href="./2-head-external.js" as="script">
+	<link rel="preload" href="./5-head-external-async.js" as="script">
+	<link rel="preload" href="./8-head-external-defer.js" as="script">
+	<link rel="preload" href="./11-body-external.js" as="script">
+	<link rel="preload" href="./14-body-external-async.js" as="script">
+	<link rel="preload" href="./17-body-external-defer.js" as="script">
+
 	<script>
 		/**
 		 * Load a JavaScript file.
@@ -39,6 +48,7 @@
 		<li><a href="https://stackoverflow.com/a/8996894" target="_blank" rel="noopener">https://stackoverflow.com/a/8996894</a></li>
 		<li><a href="https://html.spec.whatwg.org/multipage/scripting.html#script" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/scripting.html#script</a></li>
 		<li><a href="https://eager.io/blog/everything-I-know-about-the-script-tag/" target="_blank" rel="noopener">https://eager.io/blog/everything-I-know-about-the-script-tag/</a></li>
+		<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content</a></li>
 	</ul>
 
 	<a href="./index.html">&laquo; Back to Dynamic Test</a>
