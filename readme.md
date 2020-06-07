@@ -65,7 +65,7 @@ If all scripts were `defer` there would only be 1 possible execution order.
 
 But as soon as we throw `async` in the mix, scripts can literally load in any order. They may converge on the most likely order (the "standard" order), but there's no guarantee.
 
-If we give each external script a number (1–4), we can generate a list of _all_ possible orders these scripts can run in (thanks to https://www.free-online-calculator-use.com/combination-calculator.html).
+If we give each external script a number (1–4), we can generate a list of all _possible_ orders these scripts can run in (thanks to https://www.free-online-calculator-use.com/combination-calculator.html).
 
 With 4 numbers, there are 4! (4 * 3 * 2 * 1) or 24 possible combinations.
 
@@ -102,6 +102,6 @@ Based on my limited manual tests tonight, it seems like:
 
 1. Why is this the standard order?
 2. What exactly causes the variation in `async` loading?
-3. Why does `body:async` tend to fire _after_ `body:defer`?
+3. Why does `body:async` tend to fire after `body:defer`?
 4. Why not just `defer` everything?
 5. Why exactly do dynamically added scripts always run after scripts in the source code, regardless of position?
