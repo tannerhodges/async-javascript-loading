@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>👨‍🔬 Basic Test | Async JavaScript Loading</title>
+	<title>👨‍🔬 head async | Weighted Test | Async JavaScript Loading</title>
 
 	<script>console.log('1. head inline');</script>
 	<script src="./2-head-external.js"></script>
 	<script>console.log('3. head inline');</script>
 
 	<script async>console.log('4. head inline async');</script>
-	<script async src="./5-head-external-async.js"></script>
+	<script async src="./5-head-external-async-weighted.js"></script>
 	<script async>console.log('6. head inline async');</script>
 
 	<script defer>console.log('7. head inline defer');</script>
@@ -19,10 +19,11 @@
 	<script>console.log('-- end of head --');</script>
 </head>
 <body>
-	<h1>👨‍🔬 Basic Test</h1>
-	<p>How does loading scripts differently affect the order they run in?</p>
+	<h1>👨‍🔬 head async | Weighted Test</h1>
+	<p>If all the weights are the same, the load is consistent.</p>
+	<p>But what happens if we change the weights of each script?</p>
 
-	<a href="../index.html">&laquo; Back to Index</a>
+	<a href="./index.html">&laquo; Back to Weighted Test</a>
 
 	<script>console.log('10. body inline');</script>
 	<script src="./11-body-external.js"></script>

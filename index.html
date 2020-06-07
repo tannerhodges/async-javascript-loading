@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>👨‍🔬 Async JavaScript Loading</title>
+</head>
+<body>
+	<h1>👨‍🔬 Async JavaScript Loading</h1>
+	<p>How does loading scripts differently affect the order they run in?</p>
+
+	<ul>
+		<li><a href="./basic/index.html">Basic Test</a></li>
+		<li><a href="./weighted/index.html">Weighted Test</a></li>
+	</ul>
+
+	<style>
+		.results {
+			display: none;
+			border-collapse: collapse;
+		}
+
+		.results th,
+		.results td {
+			padding: 0.5rem;
+			border: 1px solid #aaa;
+		}
+
+		.results tbody {
+			white-space: pre;
+		}
+	</style>
+	<table class="results">
+		<thead>
+			<tr>
+				<th>Basic</th>
+				<th>Weighted</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+1. head inline
+2. head external
+3. head inline
+4. head inline async
+5. head external async
+6. head inline async
+7. head inline defer
+8. head external defer
+9. head inline defer
+-- end of head --
+10. body inline
+11. body external
+12. body inline
+13. body inline async
+14. body external async
+15. body inline async
+16. body inline defer
+17. body external defer
+18. body inline defer
+-- end of body --
+				</td>
+				<td>
+1. head inline
+2. head external
+3. head inline
+4. head inline async
+6. head inline async
+7. head inline defer
+9. head inline defer
+-- end of head --
+10. body inline
+11. body external
+12. body inline
+13. body inline async
+15. body inline async
+16. body inline defer
+18. body inline defer
+-- end of body --
+5. head external async
+8. head external defer
+14. body external async
+17. body external defer
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
